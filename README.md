@@ -17,14 +17,14 @@ evidencia para madurez tecnológica (TRL) y posibles requisitos regulatorios.
   06_diseno_sw.md
   07_pruebas_plan.md
   08_pruebas_resultados.md
-  09_trl/
-    trl1.md
-    trl2.md
-  10_riesgos.md
+  09_riesgos.md
 
 /hardware
 /firmware
 /software
+trl/
+  trl1.md
+  trl2.md
 ```
 
 - `/docs`: documentación de alto nivel (producto, requisitos, arquitectura,
