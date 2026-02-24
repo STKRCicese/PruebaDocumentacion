@@ -87,7 +87,6 @@ graph LR
 
 ## 8. Repositorio y Estructura
 
-```
 ```text
 /docs
   00_overview.md
@@ -108,7 +107,6 @@ graph LR
   trl2.md
   ...
   trlN.md
-```
 ```
 
 ---
