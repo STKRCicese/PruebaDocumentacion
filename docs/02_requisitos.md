@@ -22,7 +22,7 @@ Este documento concentra los requisitos de usuario, del sistema y regulatorios/d
 | **Módulo**    | `SYS` Sistema · `HW` Hardware · `FW` Firmware · `SW` Software · `COM` Comunicación · `SEG` Seguridad   |
 | **Prioridad** | `Alta` · `Media` · `Baja`                                                                              |
 | **Estado**    | `Borrador` · `Aprobado` · `Implementado` · `Verificado` · `Obsoleto`                                   |
-| **ID Riesgo** | Referencia a `10_riesgos.md` si aplica                                                                 |
+| **ID Riesgo** | Referencia a `09_riesgos.md` si aplica                                                                 |
 | **ID Prueba** | Referencia a `07_pruebas_plan.md`                                                                      |
 
 ---
