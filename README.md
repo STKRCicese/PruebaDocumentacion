@@ -37,7 +37,8 @@ Para una descripción más detallada del proyecto, ver `docs/00_overview.md`.
 
 ## Flujo de trabajo (Simplificado)
 
-1. La rama principal es `main`. Aquí solo va trabajo revisado y estable. - `main` está protegida: no se hacen commits directos, solo se actualiza mediante PR
+1. La rama principal es `main`. Aquí solo va trabajo revisado y estable.
+  - `main` está protegida: no se hacen commits directos, solo se actualiza mediante PR
    (pull requests).
 2. Cada cambio relevante se hace en una rama nueva creada desde `main`:
    - Si es una funcionalidad nueva o cambio de código:
