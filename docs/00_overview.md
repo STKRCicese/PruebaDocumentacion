@@ -88,13 +88,27 @@ graph LR
 ## 8. Repositorio y Estructura
 
 ```
-/
-├── hardware/       # Esquemáticos, PCB, BOM
-├── firmware/       # Código de microcontrolador/embebido
-├── software/       # Aplicaciones, scripts, herramientas
-└── docs/           # Toda la documentación del proyecto
-    ├── diagrams/   # Archivos .drawio, imágenes de diagramas
-    └── 09_trl/     # Documentos de madurez tecnológica
+```text
+/docs
+  00_overview.md
+  01_producto_uso_previsto.md
+  02_requisitos.md
+  03_arquitectura.md
+  04_diseno_hw.md
+  05_diseno_fw.md
+  06_diseno_sw.md
+  07_pruebas_plan.md
+  08_pruebas_resultados.md
+  09_riesgos.md
+/hardware
+/firmware
+/software
+/trl
+  trl1.md
+  trl2.md
+  ...
+  trlN.md
+```
 ```
 
 ---
