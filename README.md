@@ -18,8 +18,8 @@ evidencia para madurez tecnológica (TRL) y posibles requisitos regulatorios.
   07_pruebas_plan.md
   08_pruebas_resultados.md
   09_trl/
+    trl1.md
     trl2.md
-    trl3.md
   10_riesgos.md
 
 /hardware
