@@ -21,9 +21,11 @@ evidencia para madurez tecnológica (TRL) y posibles requisitos regulatorios.
 /hardware
 /firmware
 /software
-trl/
+/trl
   trl1.md
   trl2.md
+  ...
+  trlN.md
 ```
 
 - `/docs`: documentación de alto nivel (producto, requisitos, arquitectura,
@@ -31,14 +33,17 @@ trl/
 - `/hardware`: esquemáticos, PCB, BOM y elementos mecánicos.
 - `/firmware`: código para dispositivos embebidos y su documentación.
 - `/software`: backend, APIs, dashboards y herramientas de soporte.
+- `/trl`: documentacion y evidencia relevante para cada nivel de TRL.
 
 Para una descripción más detallada del proyecto, ver `docs/00_overview.md`.
 
 ## Flujo de trabajo (Simplificado)
 
 1. La rama principal es `main`. Aquí solo va trabajo revisado y estable.
-  - `main` está protegida: no se hacen commits directos, solo se actualiza mediante PR
-   (pull requests).
+
+- `main` está protegida: no se hacen commits directos, solo se actualiza mediante PR
+  (pull requests).
+
 2. Cada cambio relevante se hace en una rama nueva creada desde `main`:
    - Si es una funcionalidad nueva o cambio de código:
      - Ejemplos:
@@ -69,4 +74,4 @@ Para una descripción más detallada del proyecto, ver `docs/00_overview.md`.
   - `docs/07_pruebas_plan.md`
   - `docs/08_pruebas_resultados.md`
 - La gestión de riesgos se documenta en `docs/09_riesgos.md`.
-- La información relacionada con TRL se registra en `docs/trl/`.
+- La información relacionada con TRL se registra en `trl/`.
