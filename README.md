@@ -66,7 +66,7 @@ Para una descripción más detallada del proyecto, ver `docs/00_overview.md`.
 6. Los PR se revisan antes de hacer _merge_ a `main`.
    - Habrá responsables por área (hardware, firmware, software) que revisan los cambios en sus carpetas.
    - A futuro, se configurarán reglas de rama y `CODEOWNERS` para que los cambios en `/hardware`, `/firmware` o `/software` requieran revisión del responsable correspondiente.
-   > **Upgrade to GitHub Pro or make this repository public to enable CODEOWNERS.**
+   > ⚠️ **Upgrade to GitHub Pro or make this repository public to enable CODEOWNERS.**
 
 ## Flujo de trabajo con Git
 
