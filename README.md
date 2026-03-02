@@ -66,6 +66,50 @@ Para una descripción más detallada del proyecto, ver `docs/00_overview.md`.
 6. Los PR se revisan antes de hacer _merge_ a `main`.
    - Habrá responsables por área (hardware, firmware, software) que revisan los cambios en sus carpetas.
    - A futuro, se configurarán reglas de rama y `CODEOWNERS` para que los cambios en `/hardware`, `/firmware` o `/software` requieran revisión del responsable correspondiente.
+   > **Upgrade to GitHub Pro or make this repository public to enable CODEOWNERS.**
+
+## Flujo de trabajo con Git
+
+La rama principal es `main` y está **protegida**: no se hacen commits directos, solo se actualiza mediante Pull Requests revisados.
+
+```mermaid
+gitGraph
+   commit id: "init"
+
+   branch feature/firmware-manejo-sensores
+   checkout feature/firmware-manejo-sensores
+   commit id: "add: lectura sensor"
+   commit id: "add: tests fw"
+   commit id: "fix: lint"
+
+   checkout main
+   merge feature/firmware-manejo-sensores id: "PR #1 ✅" tag: "fw v0.1"
+
+   branch docs/arquitectura-v1
+   checkout docs/arquitectura-v1
+   commit id: "docs: diagrama bloques HW"
+   commit id: "docs: tabla interfaces"
+
+   checkout main
+   merge docs/arquitectura-v1 id: "PR #2 ✅" tag: "docs"
+
+   branch hotfix/bug-sensor
+   checkout hotfix/bug-sensor
+   commit id: "fix: lectura I2C 400kHz"
+
+   checkout main
+   merge hotfix/bug-sensor id: "PR #3 ✅" tag: "fw v0.1.1"
+```
+
+### Convención de ramas
+
+| Tipo                                   | Patrón                  | Ejemplo                            |
+| -------------------------------------- | ----------------------- | ---------------------------------- |
+| Nueva funcionalidad o cambio de código | `feature/<descripcion>` | `feature/firmware-manejo-sensores` |
+| Documentación                          | `docs/<descripcion>`    | `docs/arquitectura-v1`             |
+| Corrección urgente                     | `hotfix/<descripcion>`  | `hotfix/bug-sensor`                |
+
+> ⚠️ **Nunca** hacer commit directo a `main`. Todo cambio entra por Pull Request.
 
 ## Documentación y evidencias
 
