@@ -145,26 +145,96 @@ a llenar. Como mínimo indica:
 
 ---
 
-## 📚 Guía rápida para el equipo 🤝
+## Guía rápida para el equipo
 
 Esta sección es para personas que están comenzando a usar Git y GitHub.
 No es necesario ser experto; con estos pasos cubre el 90% del trabajo diario.
 
 ### Cómo empezar (configuración inicial)
 
-Solo se hace una vez:
+Solo se hace una vez por máquina. Cada colaborador la realiza en su propia
+computadora con su propia cuenta de GitHub.
 
-1. Instala [Git](https://git-scm.com/downloads) en tu máquina.
-2. Configura tu nombre y correo:
-   ```bash
-   git config --global user.name "Tu Nombre"
-   git config --global user.email "tu@correo.com"
-   ```
-3. Clona el repositorio:
-   ```bash
-   git clone https://github.com/USUARIO/REPO.git
-   cd REPO
-   ```
+**1. Instala Git**
+
+Descárgalo desde [git-scm.com/downloads](https://git-scm.com/downloads) e
+instálalo con las opciones por defecto.
+
+**2. Configura tu identidad**
+
+Abre una terminal (en Windows: Git Bash o CMD; en Mac/Linux: Terminal) y ejecuta:
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@correo.com"
+```
+
+Esto identifica tus commits dentro del historial del proyecto. Solo se hace una vez.
+
+**3. Crea una cuenta en GitHub (si aún no tienes)**
+
+Ve a [github.com](https://github.com) y regístrate con tu correo institucional.
+Una vez creada, avísale al administrador del repositorio para que te envíe
+la invitación de colaborador.
+
+**4. Acepta la invitación al repositorio**
+
+Recibirás un correo de GitHub con el asunto
+_"[usuario] invited you to collaborate"_.
+Haz clic en el enlace del correo y acepta la invitación.
+
+**5. Crea tu token de acceso personal**
+
+GitHub no acepta contraseñas normales para operaciones Git; se usa un
+**token personal** que cada usuario genera desde su propia cuenta:
+
+1. GitHub → tu avatar (arriba derecha) → **Settings**.
+2. Menú izquierdo (hasta abajo) → **Developer settings**.
+3. **Personal access tokens** → **Tokens (classic)** → **Generate new token (classic)**.
+4. En **Note** escribe algo descriptivo, por ejemplo: `mi-laptop`.
+5. En **Expiration** elige **90 days** (recomendado).
+6. En **Select scopes** activa **`repo`** (acceso completo a repositorios).
+7. Clic en **Generate token**.
+8. **Copia el token inmediatamente** — GitHub no lo vuelve a mostrar.
+   Guárdalo temporalmente en un lugar seguro (bloc de notas, gestor de contraseñas).
+
+> ⏱️ **¿Qué pasa cuando el token expira?**
+> Si Git da un error de autenticación después de un tiempo, es probable que
+> tu token haya expirado. Para renovarlo:
+>
+> 1. Ve a GitHub → Settings → Developer settings → Personal access tokens.
+> 2. Clic en el nombre de tu token → **Regenerate token** → copia el nuevo valor.
+> 3. La próxima vez que Git pida credenciales, ingresa el nuevo token como contraseña.
+>    Tu trabajo local no se pierde; solo se bloquean las operaciones con GitHub
+>    hasta que actualices el token.
+
+**6. Guarda el token para no ingresarlo cada vez**
+
+```bash
+git config --global credential.helper store
+```
+
+**7. Clona el repositorio**
+
+```bash
+git clone https://github.com/USUARIO/REPO.git
+cd REPO
+```
+
+Cuando Git pida credenciales:
+
+- **Username**: tu username de GitHub.
+- **Password**: pega el token (no tu contraseña de GitHub).
+
+A partir de ahí queda guardado en tu máquina y no se vuelve a pedir
+hasta que el token expire.
+
+> 📝 **Nota para el administrador:** El token lo genera cada usuario en su
+> propia cuenta. El administrador solo debe haber enviado previamente la
+> invitación al repositorio (Settings → Collaborators → Add people) y el
+> colaborador debe haberla aceptado antes de clonar.
+
+---
 
 ### Cómo crear una rama
 
@@ -173,8 +243,6 @@ Siempre parte desde `main` actualizado:
 ```bash
 git checkout main
 git pull origin main
-
-# Crea un branch (rama)
 git checkout -b tipo/descripcion-corta
 ```
 
@@ -183,6 +251,8 @@ Ejemplo:
 ```bash
 git checkout -b docs/requisitos-iniciales
 ```
+
+---
 
 ### Cómo hacer un commit
 
@@ -195,6 +265,8 @@ git commit -m "docs: descripción del cambio"
 git push origin nombre-de-tu-rama
 ```
 
+---
+
 ### Cómo abrir un Pull Request
 
 1. Ve al repositorio en GitHub.
@@ -204,6 +276,8 @@ git push origin nombre-de-tu-rama
 5. En el panel derecho, en **Reviewers**, asigna al responsable del área.
 6. Clic en **Create pull request**.
 
+---
+
 ### Cómo revisar y aprobar un PR
 
 Cuando alguien te asigne como reviewer:
@@ -211,5 +285,6 @@ Cuando alguien te asigne como reviewer:
 1. Entra al PR en GitHub.
 2. Clic en la pestaña **Files changed** para ver qué cambió.
 3. Puedes dejar comentarios línea por línea si algo no está claro.
-4. Cuando estés conforme, clic en **Review changes** → selecciona **Approve** → **Submit review**.
+4. Cuando estés conforme, clic en **Review changes** → selecciona
+   **Approve** → **Submit review**.
 5. El autor del PR puede entonces hacer **Merge pull request**.
