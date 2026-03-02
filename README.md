@@ -145,7 +145,7 @@ a llenar. Como mínimo indica:
 
 ---
 
-## Guía rápida para el equipo
+## 📚 Guía rápida para el equipo 🤝
 
 Esta sección es para personas que están comenzando a usar Git y GitHub.
 No es necesario ser experto; con estos pasos cubre el 90% del trabajo diario.
